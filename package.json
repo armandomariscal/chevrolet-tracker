@@ -5,8 +5,14 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
-    "@nx/js": "22.6.1",
+    "@nx/eslint": "^22.7.0",
+    "@nx/jest": "^22.7.0",
+    "@nx/js": "^22.6.1",
+    "@nx/node": "^22.7.0",
     "@nx/workspace": "22.6.1",
+    "@swc/cli": "^0.8.1",
+    "@swc/core": "^1.15.30",
+    "@swc/helpers": "^0.5.21",
     "nx": "22.6.1",
     "prisma": "^7.5.0"
   }
