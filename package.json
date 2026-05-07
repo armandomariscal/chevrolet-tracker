@@ -1,0 +1,28 @@
+{
+  "name": "@chevrolet-tracker/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsx backend/src/server.ts"
+  },
+  "private": true,
+  "devDependencies": {
+    "@nx/eslint": "^22.7.0",
+    "@nx/jest": "^22.7.0",
+    "@nx/js": "^22.6.1",
+    "@nx/node": "^22.7.0",
+    "@nx/workspace": "22.6.1",
+    "@swc/cli": "^0.8.1",
+    "@swc/core": "^1.15.30",
+    "@swc/helpers": "^0.5.21",
+    "nx": "22.6.1",
+    "prisma": "^7.5.0",
+    "tsx": "^4.21.0"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "pg": "^8.20.0"
+  }
+}
