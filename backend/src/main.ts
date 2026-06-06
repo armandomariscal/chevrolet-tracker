@@ -1,11 +1,19 @@
 import Fastify from 'fastify';
+import cors from '@fastify/cors';
 import prisma from './lib/prisma.js';
+import authRoutes from './routes/auth.js';
 
 const app = Fastify({ logger: true });
+
+app.register(cors, {
+  origin: true,
+});
 
 app.get('/', async () => {
   return { message: 'API running' };
 });
+
+app.register(authRoutes, { prefix: '/api/auth' });
 
 app.get('/api/work-items', async (request, reply) => {
   try {
@@ -16,7 +24,6 @@ app.get('/api/work-items', async (request, reply) => {
         tags: true,
       },
     });
-
     return items;
   } catch (error) {
     console.error(error);
@@ -26,7 +33,13 @@ app.get('/api/work-items', async (request, reply) => {
 
 const start = async () => {
   try {
-    await app.listen({ port: 3000, host: '0.0.0.0' });
+    console.log(app.printRoutes());
+
+    await app.listen({
+      port: 3000,
+      host: '0.0.0.0',
+    });
+
     console.log('Server running on http://localhost:3000');
   } catch (err) {
     app.log.error(err);
